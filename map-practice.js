@@ -44,3 +44,15 @@ function getAllFirstNamesWithMap (people){
     //  return people.map(person => getFirstName(person));
 }
 console.log('using array.map', getAllFirstNamesWithMap(people));
+
+function getFullName (person) {
+    return person.firstName + ' ' + person.lastName;
+    // or:
+    //  return `${person.firstName} ${person.lastName}`;
+    // or:
+    //  return [person.firstName, person.lastName].join(' ');
+}
+
+function getAllFullNames (people) {
+    return people.map(getFullName);
+}
