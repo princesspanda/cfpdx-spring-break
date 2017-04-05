@@ -56,3 +56,11 @@ function getFullName (person) {
 function getAllFullNames (people) {
     return people.map(getFullName);
 }
+
+function timeWarp(person){
+    return person.age - 10;
+}
+
+function getAllAges(arr){
+    return arr.map(timeWarp);
+}
