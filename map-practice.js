@@ -1,10 +1,10 @@
 'use strict'
 
-const people = [
-    { firstName: 'Kevin', lastName: 'Wong', age: 21 },
-    { firstName: 'Ivy', lastName: 'Patton', age: 38 },
-    { firstName: 'Morgan', lastName: 'Fogarty', age: 32 },
-]
+// const people = [
+//     { firstName: 'Kevin', lastName: 'Wong', age: 21 },
+//     { firstName: 'Ivy', lastName: 'Patton', age: 38 },
+//     { firstName: 'Morgan', lastName: 'Fogarty', age: 32 },
+// ]
 const a = 42;
 
 // Write a function called 'getFirstName' that takes one 
@@ -61,6 +61,6 @@ function timeWarp(person){
     return person.age - 10;
 }
 
-function getAllAges(arr){
-    return arr.map(timeWarp);
+function getAllAges(people){
+    return people.map(timeWarp);
 }
