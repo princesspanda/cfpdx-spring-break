@@ -3,9 +3,9 @@ const characters = [
     { name: 'Emperor Palpatine', team: 'Empire' },
     { name: 'Han Solo', team: 'Rebels' },
     { name: 'Princess Leia', team: 'Rebels' },
-    { name: 'Yoda', team: 'Rebels' }];
+    { name: 'Yoda', team: 'Rebels' },];
 
-characters.reduce(function(acc, curr){
+let empireOrRebels = characters.reduce(function(acc, curr){
     if(curr.team === 'Empire') {
         acc.empireCount+=1;
     }
@@ -14,6 +14,45 @@ characters.reduce(function(acc, curr){
     }
     return acc;
 }, {empireCount: 0, rebelCount: 0});
+
+console.log(empireOrRebels); // {empireCount: 2, rebelCount: 0}
+
+const moreCharacters = [
+    { name: 'Darth Vader', team: 'Empire' },
+    { name: 'Sunshine bear', team: 'Carebears'},
+    { name: 'Emperor Palpatine', team: 'Empire' },
+    { name: 'Han Solo', team: 'Rebels' },
+    { name: 'Princess Leia', team: 'Rebels' },
+    { name: 'Yoda', team: 'Rebels' },
+    { name: 'Rainbow pony', team: 'Brony'},
+    { name: 'Wicket', team: 'Ewoks'}];
+
+let characterCount = moreCharacters.reduce(function (acc, curr) {
+    if (acc[curr.team]) {
+        acc[curr.team] += 1;
+    }
+    else {
+        acc[curr.team] = 1;
+    }
+    /* same thing:
+    if(!acc[curr.team]){
+      acc[curr.team]=0;
+    } 
+    acc[curr.team]+=1; 
+    */
+    /* same thing: 
+    if(acc.hasOwnProperty(curr.team)){
+        acc[curr.team] +=1;
+    }
+        else {
+        acc[curr.team] = 0;
+    }
+    */
+
+    return acc;
+}, {});
+
+console.log(characterCount); // {Empire: 2, Carebears: 1, Rebels: 3, Brony: 1, Ewoks: 1}
 
 /* .reduce wireframe: */
 /**********************
