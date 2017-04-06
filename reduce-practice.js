@@ -5,6 +5,16 @@ const characters = [
     { name: 'Princess Leia', team: 'Rebels' },
     { name: 'Yoda', team: 'Rebels' }];
 
+characters.reduce(function(acc, curr){
+    if(curr.team === 'Empire') {
+        acc.empireCount+=1;
+    }
+    else if (curr.team === 'Rebels'){
+        acc.rebelCount+=1;
+    }
+    return acc;
+}, {empireCount: 0, rebelCount: 0});
+
 /* .reduce wireframe: */
 /**********************
 
